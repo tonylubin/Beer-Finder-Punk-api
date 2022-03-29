@@ -1,45 +1,31 @@
 import styles from "./App.module.scss";
-import Main from "./containers/Main";
-import NavBar from "./containers/NavBar";
+import Main from "./containers/Main/Main";
+import NavBar from "./containers/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
+import getBeerData from "./services/beerdata.service";
 
 function App() {
-  const [allBeers, setAllBears] = useState([]);
+
   const [beersFiltered, setBeersFiltered] = useState([]);
   const [searchItem, setSearchItem] = useState("");
+  const [abvFilter, setAbvFilter] = useState(false);
+  const [classicFilter, setClassicFilter] = useState(false);
+  const [acidityFilter, setAcidityFilter] = useState(false);
 
   useEffect(() => {
-    const getBeerData = async () => {
-      const fetchBeers = await fetch(
-        "https://api.punkapi.com/v2/beers?page=1&per_page=50"
-      );
-      const beersResults = await fetchBeers.json();
-      setAllBears(beersResults);
-    };
-    getBeerData();
-  }, []);
-
-  // run search function on searchItem change & populate beer database
-  useEffect(() => {
-    const beerSearch = () => {
-      let searchResults = allBeers.filter(
-        (beer) => beer.name.toLowerCase().includes(searchItem) //  returns all beers due to "" characters
-      );
-      return searchResults;
-    };
-    setBeersFiltered(beerSearch);
-  }, [searchItem, allBeers]);
-
-  //  filtering condition functions
-  const abvFilter = () => beersFiltered.filter((beer) => beer.abv > 6);
-
-  const classicFilter = () =>
-    beersFiltered.filter(
-      (beer) => parseInt(beer.first_brewed.substring(3)) < 2010
-    );
-
-  const acidityFilter = () => beersFiltered.filter((beer) => beer.ph < 4);
+    // N/B: getBeerData function returns a promise that we need to handle
+    const fetchBeers = async () => {
+      const beers = await getBeerData(
+        searchItem,
+        abvFilter,
+        classicFilter,
+        acidityFilter
+        );
+        setBeersFiltered(beers);
+    };    
+    fetchBeers();
+  },[abvFilter, acidityFilter, classicFilter, searchItem]);
 
   return (
     <div className={styles.appContainer}>
@@ -47,12 +33,11 @@ function App() {
       <NavBar
         setSearchItem={setSearchItem}
         setBeersFiltered={setBeersFiltered}
-        allBeers={allBeers}
-        abvFilter={abvFilter}
-        acidityFilter={acidityFilter}
-        classicFilter={classicFilter}
+        setAbvFilter={setAbvFilter}
+        setAcidityFilter={setAcidityFilter}
+        setClassicFilter={setClassicFilter}
       />
-      {allBeers && <Main beersSearched={beersFiltered} />}
+      {beersFiltered && <Main beersSearched={beersFiltered} />}
     </div>
   );
 }

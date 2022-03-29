@@ -1,6 +1,6 @@
 import React from "react";
-import CardFront from "../CardFront";
-import CardBack from "../CardBack";
+import CardFront from "../CardFront/CardFront";
+import CardBack from "../CardBack/CardBack";
 import styles from "./Card.module.scss";
 
 const Card = (props) => {
