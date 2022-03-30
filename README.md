@@ -2,6 +2,8 @@
 
 Tasked with building a project in REACT JS that utilises BrewDog's PUNK Api
 
+VISIT:  https://tonylubin.github.io/Beer-Finder---Punk-Api---React
+
 # Outcomes: #
 
 (1) ability to search for beers via name/letter and page will update while user types each letter  
@@ -30,5 +32,6 @@ Tasked with building a project in REACT JS that utilises BrewDog's PUNK Api
 - unit tested, where suitable, using JEST/ENZYME
  
 # RUN: #
+- clone down repo
 - type: 'npm install'
 - using Node.js type: 'npm start'
