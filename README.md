@@ -32,5 +32,6 @@ VISIT:  https://tonylubin.github.io/Beer-Finder---Punk-Api---React
 - unit tested, where suitable, using JEST/ENZYME
  
 # RUN: #
+- clone down repo
 - type: 'npm install'
 - using Node.js type: 'npm start'
