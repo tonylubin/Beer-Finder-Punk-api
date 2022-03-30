@@ -8,7 +8,8 @@ Tasked with building a project in REACT JS that utilises BrewDog's PUNK Api
 (2) can filter content on 3 conditions:   
     - High Alcohol (ABV value greater than 6%)  
     - Classic Range (was first brewed before 2010)  
-    - High Acidity (ph lower than 4)  
+    - High Acidity (ph lower than 4)
+(3) demonstrate how to read Api's documentation and use it inside the project
 
 # Design/Display: # 
 
@@ -21,10 +22,13 @@ Tasked with building a project in REACT JS that utilises BrewDog's PUNK Api
 # Functions: #
 
 - using FETCH with async/await to get data from Api
-- search bar (input) that updates beers to be displayed in a useEffect Hook, fires only when search item is updated
-- 3 x checkboxes that use a callback function to filter beer data via set condition(s)
-- using useState Hook to hold data for beers data and filtered beer data
+- utilised Api endpoints and parameters in a 'data service file' (external to component to keep it simple) for the search function and filtering options, which is then
+  called in a useEffect, according to dependecies of the 'search/filter options'    
+- search bar (input) that updates beers to be displayed
+- 3 x checkboxes that use a setState to filter beer data via set condition(s)
+- using useState Hook to hold data for filtered beer data
 - unit tested, where suitable, using JEST/ENZYME
  
 # RUN: #
-- using Node.js type 'npm start'
+- type: 'npm install'
+- using Node.js type: 'npm start'
