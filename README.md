@@ -2,7 +2,7 @@
 
 Tasked with building a project in REACT JS that utilises BrewDog's PUNK Api
 
-VISIT:  https://tonylubin.github.io/Beer-Finder---Punk-Api---React
+VISIT:  https://tonylubin.github.io/Beer-Finder-Punk-api
 
 # Outcomes: #
 

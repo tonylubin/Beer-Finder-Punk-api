@@ -2,7 +2,7 @@
   "name": "punk-beers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tonylubin.github.io/Beer-Finder---Punk-Api---React",
+  "homepage": "https://tonylubin.github.io/Beer-Finder-Punk-api",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
