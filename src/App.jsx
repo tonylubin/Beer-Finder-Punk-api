@@ -30,9 +30,8 @@ function App() {
 
   return (
     <div className={styles.appContainer}>
-      <Header />
+      <Header setSearchItem={setSearchItem}/>
       <NavBar
-        setSearchItem={setSearchItem}
         setBeersFiltered={setBeersFiltered}
         setAbvFilter={setAbvFilter}
         setAcidityFilter={setAcidityFilter}
