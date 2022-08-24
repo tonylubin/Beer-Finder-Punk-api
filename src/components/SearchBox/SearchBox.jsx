@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import styles from './SearchBox.module.scss';
 
 const SearchBox = ({ setSearchItem }) => {
@@ -8,7 +10,11 @@ const SearchBox = ({ setSearchItem }) => {
     }
 
     return (
-       <input className={styles.inputBox} onInput={getSearchItem} type="text" placeholder='Search by name or letter...'></input>
+        <div className={styles.wrapper}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon}/>
+            <input className={styles.inputBox} onInput={getSearchItem} type="text" placeholder='Search...'>
+            </input>
+        </div>
     )
 }
 
