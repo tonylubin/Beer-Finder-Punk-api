@@ -1,4 +1,26 @@
-.inputBox {
-    width: 75%;
-    font-size: 1.1rem;
+@use "../../variables" as *;
+
+.inputBox {    
+    width: auto;
+    font-size: ($base-rem-length * 13);
+    background-color: $search-box-color;
+    border-radius: ($base-px-length * 3);
+    border: none;
+    padding: ($base-rem-length * 5) ($base-rem-length * 10) ($base-rem-length * 5) ($base-rem-length * 30);
+}
+
+.inputBox:focus {
+    outline-style: solid;
+    outline-color: $border2-color;
+}
+
+.wrapper {
+    position: relative;
+    padding-right: ($base-rem-length * 30);
+}
+
+.icon {
+    position: absolute;
+    top:  calc(50% - ($base-rem-length * 5));
+    left: 5%;
 }

@@ -1,17 +1,25 @@
+@use "../../variables" as *;
+
 .nav {
     width: 20vw;
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     position: fixed;
-    gap: 20px;
+    gap: ($base-px-length * 4);
     top: 20vh;
-    padding-top: 1.8rem;
+    padding-top: ($base-rem-length * 10);
+    font-family: $lato-font;
+
+    &__header {
+        font-size: ($base-rem-length * 14);
+        text-decoration: underline;
+        text-underline-offset: ($base-rem-length * 5);
+    }
 }
 
 .info {
-    padding-top: 1.8rem;
-    font-size: 1.1rem;
-    text-decoration: #1BA7CD solid underline 2px;
-    font-weight: 600;
+    padding-top: ($base-rem-length * 18);
+    font-size: ($base-rem-length * 11);
+    text-decoration: $secondary-color solid underline ($base-px-length - 3);
 }

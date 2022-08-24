@@ -1,22 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@use "../../variables" as *;
 
 .cardBack {
-    height: 500px;
-    width: 300px;
-    border: 1px solid gray;
+    height: $card-height;
+    width: $card-width;
     text-align: center;
-    font-family: Lato;
     overflow: auto;
-    padding: 0px 10px 10px 10px;
+    padding: 0px ($base-px-length * 2) ($base-px-length * 2) ($base-px-length * 2);
+    background-color: $card-color;
+    border-radius: ($base-px-length * 3);
+    font-family: $lato-font;
+    font-weight: ($font-weight-base * 3);
+
+    /* Works on Firefox */
+    scrollbar-width: auto;
+    scrollbar-color: auto;
     
     > h3 {
-        text-decoration: #1BA7CD solid underline 2px;
-        color: #1BA7CD;
+        text-decoration: $secondary-color solid underline ($base-px-length - 3);
+        color: $secondary-color;
+        padding-top: ($base-rem-length * 15);
+        margin: 0;
     }
 }
 
-span {
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding-left: 10px;
+.foodPairing {
+    text-align: left;
+    padding: 0 ($base-rem-length * 15);
+}
+
+.info {
+    font-size: ($base-rem-length * 11);
+    font-weight: bold;
+    padding: 0 ($base-rem-length * 2) 0 ($base-rem-length * 5);
+    color: $secondary-color;
+    text-decoration: $secondary-color solid underline ($base-px-length - 3);
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+.cardBack::-webkit-scrollbar {
+width: ($base-px-length * 2);
+}
+
+.cardBack::-webkit-scrollbar-track {
+box-shadow: inset 0 0 ($base-px-length + 1) rgba(0,0,0,0.3);
+border-radius: ($base-px-length * 2);
+background-color: $search-box-color;
+}
+
+.cardBack::-webkit-scrollbar-thumb {
+border-radius: ($base-px-length * 2);
+background: linear-gradient(to left, $main-background-color, #e4e4e4);
+border: ($base-px-length - 4) solid #aaa;
 }

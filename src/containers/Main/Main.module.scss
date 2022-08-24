@@ -1,10 +1,12 @@
+@use "../../variables" as *;
+
 .mainContainer {
     width: 80vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 2rem;
+    grid-row-gap: ($base-rem-length * 20);
     justify-items: center;
-    padding-top: 1.8rem;
+    padding-top: ($base-rem-length * 18);
     position: absolute;
     left: 20vw;
     top: 20vh;
@@ -12,7 +14,7 @@
 
 .notFound {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: ($base-rem-length * 25);
     grid-column: 2;
-    color: #1ba7cd;
+    color: $secondary-color;
 }

@@ -1,9 +1,17 @@
+@use "../../variables" as *;
+
 .filterItem {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     width: 50%;
-    font-size: 1.1rem;
-    color: #1BA7CD;
-    font-weight: 600;
+    font-size: ($base-rem-length * 11);
+    color: $secondary-color;
+    font-weight: ($font-weight-base * 6);
+    font-family: $lato-font;
+}
+
+.checkbox {
+    accent-color: $secondary-color;
+    color: $main-background-color;
 }
