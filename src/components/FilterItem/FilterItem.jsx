@@ -7,7 +7,7 @@ function FilterItem (props) {
   return (
     <div className={styles.filterItem}>
       <label htmlFor={name}>{description}</label>
-      <input onChange={checkboxFunc} type={type} id={id} name={name}></input>
+      <input className={styles.checkbox} onChange={checkboxFunc} type={type} id={id} name={name}></input>
     </div>
   );
 }
