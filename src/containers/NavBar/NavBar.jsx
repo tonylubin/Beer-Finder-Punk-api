@@ -1,10 +1,8 @@
 import React from "react";
 import FiltersList from "../../components/FiltersList/FiltersList";
-import SearchBox from "../../components/SearchBox/SearchBox";
 import styles from "./NavBar.module.scss";
 
 const NavBar = ({
-  setSearchItem,
   setBeersFiltered,
   setAbvFilter,
   setClassicFilter,
@@ -14,7 +12,7 @@ const NavBar = ({
   
   return (
     <nav className={styles.nav}>
-      <SearchBox setSearchItem={setSearchItem} />
+      <h3 className={styles.nav__header}>Filters:</h3>
       <FiltersList
         setBeersFiltered={setBeersFiltered}
         setAbvFilter={setAbvFilter}
