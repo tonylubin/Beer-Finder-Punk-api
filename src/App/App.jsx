@@ -7,9 +7,7 @@ import Header from "../components/Header/Header";
 import getBeerData from "../services/beerdata.service";
 import Options from "../components/Options/Options";
 
-
 function App() {
-
   const [beersFiltered, setBeersFiltered] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const [abvFilter, setAbvFilter] = useState(false);
@@ -24,22 +22,26 @@ function App() {
         abvFilter,
         classicFilter,
         acidityFilter
-        );
-        setBeersFiltered(beers);
-    };    
+      );
+      setBeersFiltered(beers);
+    };
     fetchBeers();
-  },[abvFilter, acidityFilter, classicFilter, searchItem]);
+  }, [abvFilter, acidityFilter, classicFilter, searchItem]);
 
   return (
     <div className={styles.appContainer}>
-      <Header setSearchItem={setSearchItem}/>
+      <Header setSearchItem={setSearchItem} />
       <NavBar
-        setBeersFiltered={setBeersFiltered}
         setAbvFilter={setAbvFilter}
         setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
       />
-      <Options setSearchItem={setSearchItem}/>
+      <Options
+        setSearchItem={setSearchItem}
+        setAbvFilter={setAbvFilter}
+        setAcidityFilter={setAcidityFilter}
+        setClassicFilter={setClassicFilter}
+      />
       {beersFiltered && <Main beersSearched={beersFiltered} />}
     </div>
   );

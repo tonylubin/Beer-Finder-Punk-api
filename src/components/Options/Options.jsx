@@ -3,28 +3,39 @@ import FiltersList from "../FiltersList/FiltersList";
 import SearchBox from "../SearchBox/SearchBox";
 import styles from "./Options.module.scss";
 
-const Options = ({ setSearchItem }) => {
+const Options = ({
+  setSearchItem,
+  setAbvFilter,
+  setAcidityFilter,
+  setClassicFilter,
+}) => {
+  const [visibility, setVisibility] = useState(false);
 
-    const [ visibility, setVisibility ] = useState(false);
+  const revealBox = () => {
+    setVisibility(!visibility);
+  };
 
-    const revealBox = ()  => {
-        setVisibility(!visibility);
-    };
-
-    return (
-        <section className={styles.options}>
-            <div className={`${styles.options__box} ${!visibility ? styles.options__hiddenBox : null}`}>
-                <SearchBox setSearchItem={setSearchItem}/>
-                <FiltersList />
-            </div>
-            <div className={styles.btnHolder}>
-                <button className={styles.btnHolder__btn} onClick={revealBox}>
-                    Filter / Search
-                </button>
-            </div>
-        </section>
-    )
-
-}
+  return (
+    <section className={styles.options}>
+      <div
+        className={`${styles.options__box} ${
+          !visibility ? styles.options__hiddenBox : null
+        }`}
+      >
+        <SearchBox setSearchItem={setSearchItem} />
+        <FiltersList
+          setAbvFilter={setAbvFilter}
+          setAcidityFilter={setAcidityFilter}
+          setClassicFilter={setClassicFilter}
+        />
+      </div>
+      <div className={styles.btnHolder}>
+        <button className={styles.btnHolder__btn} onClick={revealBox}>
+          Filter / Search
+        </button>
+      </div>
+    </section>
+  );
+};
 
 export default Options;
