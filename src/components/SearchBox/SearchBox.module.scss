@@ -16,21 +16,16 @@
 
 .wrapper {
     position: relative;
-    padding: ($base-rem-length * 10) 0 ($base-rem-length * 5) 0;
 }
 
 .icon {
     position: absolute;
-    top:  calc(50% - ($base-rem-length * 3));
+    top:  calc(50% - ($base-rem-length * 5));
     left: 5%;
 }
 
 
 @media screen and (min-width: 768px) {
-
-    .wrapper {
-        margin: ($base-rem-length * 10) 0;
-    }
 
     .inputBox {
         font-size: ($base-rem-length * 13);

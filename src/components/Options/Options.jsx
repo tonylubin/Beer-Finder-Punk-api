@@ -23,11 +23,13 @@ const Options = ({
         }`}
       >
         <SearchBox setSearchItem={setSearchItem} />
-        <FiltersList
+        <div className={styles.options__filters}>
+          <FiltersList
           setAbvFilter={setAbvFilter}
           setAcidityFilter={setAcidityFilter}
           setClassicFilter={setClassicFilter}
-        />
+          />
+        </div>
       </div>
       <div className={styles.btnHolder}>
         <button className={styles.btnHolder__btn} onClick={revealBox}>
