@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 15vh;
+  height: 18vh;
   position: fixed;
   color: $primary-color;
   background-color: $main-background-color;
@@ -26,18 +26,37 @@
   &__heading {
     > p {
       color: $secondary-color;
-      padding-bottom: ($base-px-length * 2);
+      padding: ($base-px-length * 2) ($base-px-length * 4) ($base-px-length * 2) 0;
       font-family: $antonio-font;
+      font-size: (($base-px-length * 3) - 1);
     }
     > h1 {
-      font-size: ($base-rem-length * 25);
-      margin-bottom: 0;
+      font-size: ($base-rem-length * 20);
+      padding-top: ($base-rem-length * 10);
     }
   }
 
   &__searchbox {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .header {
+
+    &__searchbox {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__heading {
+      > h1 {
+        font-size: ($base-rem-length * 25);
+      }
+      > p {
+        font-size: ($base-rem-length * 10);
+      }
+    }
   }
 }

@@ -20,7 +20,7 @@ const NavBar = ({
         setClassicFilter={setClassicFilter}
         allBeers={allBeers}
       />
-      <p className={styles.info}>Hover over Beer for more information</p>
+      <p className={styles.info}>Click on Beer card for more information</p>
     </nav>
   );
 };

@@ -5,13 +5,29 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 50%;
-    font-size: ($base-rem-length * 11);
+    font-size: ($base-rem-length * 8);
     color: $secondary-color;
     font-weight: ($font-weight-base * 6);
     font-family: $lato-font;
+    padding-left: ($base-px-length * 4);
 }
 
 .checkbox {
     accent-color: $secondary-color;
     color: $main-background-color;
+}
+
+
+@media  screen and (min-width: 768px) {
+    
+    .filterItem {
+    font-size: ($base-rem-length * 11);
+    }
+}
+
+@media  screen and (min-width: 992px) {
+    
+    .filterItem {
+    font-size: ($base-rem-length * 11);
+    }
 }

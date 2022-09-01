@@ -1,10 +1,8 @@
 @use "../../variables" as *;
 
 .nav {
-    width: 20vw;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
+    max-width: 20vw;
+    display: none;
     position: fixed;
     gap: ($base-px-length * 4);
     top: 20vh;
@@ -15,11 +13,22 @@
         font-size: ($base-rem-length * 14);
         text-decoration: underline;
         text-underline-offset: ($base-rem-length * 5);
+        padding-left: ($base-px-length * 4);
     }
 }
 
 .info {
     padding-top: ($base-rem-length * 18);
+    padding-left: ($base-px-length * 4);
     font-size: ($base-rem-length * 11);
     text-decoration: $secondary-color solid underline ($base-px-length - 3);
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
 }
