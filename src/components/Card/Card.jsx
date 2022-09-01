@@ -4,6 +4,9 @@ import CardBack from "../CardBack/CardBack";
 import styles from "./Card.module.scss";
 
 const Card = (props) => {
+
+  const toggleRotationClass = (e) => e.currentTarget.classList.toggle(styles.cardDisplayRotate);
+
   const getBeerCard = (props) => {
     const {
       id,
@@ -19,7 +22,7 @@ const Card = (props) => {
     } = props;
 
     return (
-      <section className={styles.cardDisplay} key={id} >
+      <section className={styles.cardDisplay} key={id} onClick={toggleRotationClass}>
         <div className={styles.cardDisplay__front}>
           <CardFront
             name={name}

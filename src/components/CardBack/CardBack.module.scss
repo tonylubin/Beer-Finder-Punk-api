@@ -1,11 +1,10 @@
 @use "../../variables" as *;
 
 .cardBack {
-    height: $card-height;
-    width: $card-width;
+    height: 100%;
+    width: 100%;
     text-align: center;
     overflow: auto;
-    padding: 0px ($base-px-length * 2) ($base-px-length * 2) ($base-px-length * 2);
     background-color: $card-color;
     border-radius: ($base-px-length * 3);
     font-family: $lato-font;
@@ -18,8 +17,7 @@
     > h3 {
         text-decoration: $secondary-color solid underline ($base-px-length - 3);
         color: $secondary-color;
-        padding-top: ($base-rem-length * 15);
-        margin: 0;
+        padding: ($base-rem-length * 15) 0 ($base-rem-length * 10) 0;
     }
 }
 
@@ -36,6 +34,9 @@
     text-decoration: $secondary-color solid underline ($base-px-length - 3);
 }
 
+p:nth-child(7) {
+    padding: ($base-rem-length * 15) 0;
+}
 
 /* Works on Chrome, Edge, and Safari */
 .cardBack::-webkit-scrollbar {

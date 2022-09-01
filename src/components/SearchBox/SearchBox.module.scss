@@ -2,7 +2,7 @@
 
 .inputBox {    
     width: auto;
-    font-size: ($base-rem-length * 13);
+    font-size: ($base-rem-length * 10);
     background-color: $search-box-color;
     border-radius: ($base-px-length * 3);
     border: none;
@@ -16,11 +16,35 @@
 
 .wrapper {
     position: relative;
-    padding-right: ($base-rem-length * 30);
+    padding: ($base-rem-length * 10) 0 ($base-rem-length * 5) 0;
 }
 
 .icon {
     position: absolute;
-    top:  calc(50% - ($base-rem-length * 5));
+    top:  calc(50% - ($base-rem-length * 3));
     left: 5%;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .wrapper {
+        margin: ($base-rem-length * 10) 0;
+    }
+
+    .inputBox {
+        font-size: ($base-rem-length * 13);
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    .wrapper {
+        padding-right: ($base-rem-length * 60);
+    }
+
+    .inputBox {
+        font-size: ($base-rem-length * 13);
+    }
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./App.module.scss";
-import Main from "./containers/Main/Main";
-import NavBar from "./containers/NavBar/NavBar";
+import Main from "../containers/Main/Main";
+import NavBar from "../containers/NavBar/NavBar";
 import { useState, useEffect } from "react";
-import Header from "./components/Header/Header";
-import getBeerData from "./services/beerdata.service";
+import Header from "../components/Header/Header";
+import getBeerData from "../services/beerdata.service";
+import Options from "../components/Options/Options";
+
 
 function App() {
 
@@ -37,6 +39,7 @@ function App() {
         setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
       />
+      <Options setSearchItem={setSearchItem}/>
       {beersFiltered && <Main beersSearched={beersFiltered} />}
     </div>
   );
