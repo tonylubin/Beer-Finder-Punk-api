@@ -1,8 +1,8 @@
 @use "../../variables" as *;
 
 .cardFront {
-  height: $card-height;
-  width: $card-width;
+  height: 100%;
+  width: 100%;
   text-align: center;
   background-color: $card-color;
   border-radius: ($base-px-length * 3);
@@ -24,6 +24,8 @@
     flex-direction: column;
     height: auto;
     width: 100%;
+    gap: ($base-rem-length * 10);
+    padding-top: ($base-rem-length * 10);
 
     h2 {
       margin-bottom: 0;
