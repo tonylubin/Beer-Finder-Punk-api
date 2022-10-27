@@ -12,14 +12,14 @@ const CardFront = (props) => {
 
     return (
         <div className={styles.cardFront}>
-            <section className={styles.imageContainer}>
+            <div className={styles.imageContainer}>
                 <img src={image} alt={name} />
-            </section>
-            <section className={styles.infoContainer}>
+            </div>
+            <div className={styles.infoContainer}>
                 <h2>{name}</h2>
                 <p className={styles.infoContainer__abv}>ABV: {abv}%</p>
                 <h4>"{tagline}"</h4>
-            </section>
+            </div>
         </div>
     )
 }
