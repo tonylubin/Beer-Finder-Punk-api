@@ -11,16 +11,15 @@
   &__front {
     position: absolute;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     width: 100%;
     height: 100%;
   }
 
   &__back {
-    position: absolute;
-    transform: rotateY(180deg);  // for backward perspective(when flipped reads left to right)
-    backface-visibility: hidden;
-    width: 100%;
-    height: 100%;
+    @extend .cardDisplay__front;
+    transform: rotateY(180deg);
+    // for backward perspective(when flipped reads left to right)
   }
 }
 

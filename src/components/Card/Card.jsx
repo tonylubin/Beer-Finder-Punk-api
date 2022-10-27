@@ -22,7 +22,7 @@ const Card = (props) => {
     } = props;
 
     return (
-      <section className={styles.cardDisplay} key={id} onClick={toggleRotationClass}>
+      <article className={styles.cardDisplay} key={id} onClick={toggleRotationClass}>
         <div className={styles.cardDisplay__front}>
           <CardFront
             name={name}
@@ -40,7 +40,7 @@ const Card = (props) => {
             first_brewed={first_brewed}
           />
         </div>
-      </section>
+      </article>
     );
   };
 
