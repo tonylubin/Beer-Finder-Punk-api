@@ -11,8 +11,8 @@
   .imageContainer {
     height: 40%;
     width: auto;
-    padding: ($base-px-length * 6) ($base-px-length * 4) ($base-px-length * 4) ($base-px-length * 4);
-
+    @include padding(6,4,4,4);
+    
     img {
       width: auto;
       height: 100%;
@@ -29,7 +29,7 @@
 
     h2 {
       margin-bottom: 0;
-      padding: 0 ($base-px-length * 2);
+      @include padding(0,2,0,2);
     }
 
     h4 {

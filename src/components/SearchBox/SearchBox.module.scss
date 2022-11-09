@@ -6,7 +6,7 @@
     background-color: $search-box-color;
     border-radius: ($base-px-length * 3);
     border: none;
-    padding: ($base-rem-length * 5) ($base-rem-length * 10) ($base-rem-length * 5) ($base-rem-length * 30);
+    @include padding(5, 10, 5, 30);
 }
 
 .inputBox:focus {

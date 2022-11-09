@@ -21,7 +21,7 @@
     padding-top: ($base-rem-length * 18);
     padding-left: ($base-px-length * 4);
     font-size: ($base-rem-length * 11);
-    text-decoration: $secondary-color solid underline ($base-px-length - 3);
+    @include textUnderline;
 }
 
 

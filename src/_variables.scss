@@ -23,3 +23,14 @@ $base-px-length: 5px;
 $base-rem-length: 0.1rem;
 $card-height: 480px;
 $card-width: 300px;
+
+// mixins
+@mixin textUnderline {
+    text-decoration-line: underline;
+    text-decoration-color: $secondary-color;
+    text-decoration-thickness: ($base-px-length - 3);
+}
+
+@mixin padding($top,$right,$bottom,$left) {
+    padding: ($top * $base-rem-length) ($right * $base-rem-length) ($bottom * $base-rem-length) ($left * $base-rem-length);
+}
