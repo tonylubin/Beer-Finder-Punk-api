@@ -7,6 +7,9 @@
   background-color: $card-color;
   border-radius: ($base-px-length * 3);
   font-family: $antonio-font;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .imageContainer {
     height: 40%;
