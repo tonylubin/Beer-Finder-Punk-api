@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Beer-Finder-Punk-api/static/css/main.bde799ad.css",
-    "main.js": "/Beer-Finder-Punk-api/static/js/main.b0a52b2b.js",
+    "main.js": "/Beer-Finder-Punk-api/static/js/main.d6cfc1bb.js",
     "static/media/BrewDog-logo.jpg": "/Beer-Finder-Punk-api/static/media/BrewDog-logo.d57507b05b6b88ff784f.jpg",
     "index.html": "/Beer-Finder-Punk-api/index.html",
     "main.bde799ad.css.map": "/Beer-Finder-Punk-api/static/css/main.bde799ad.css.map",
-    "main.b0a52b2b.js.map": "/Beer-Finder-Punk-api/static/js/main.b0a52b2b.js.map"
+    "main.d6cfc1bb.js.map": "/Beer-Finder-Punk-api/static/js/main.d6cfc1bb.js.map"
   },
   "entrypoints": [
     "static/css/main.bde799ad.css",
-    "static/js/main.b0a52b2b.js"
+    "static/js/main.d6cfc1bb.js"
   ]
 }
