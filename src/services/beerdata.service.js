@@ -1,4 +1,4 @@
-const BASE_API_URL = "https://api.punkapi.com/v2/beers?page=1&per_page=50";
+const BASE_API_URL = "https://api.punkapi.com/v2/beers?per_page=80";
 
 const getBeerData = async (
   searchTerm,
