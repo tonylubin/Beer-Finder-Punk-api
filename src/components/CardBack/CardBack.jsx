@@ -10,7 +10,11 @@ const CardBack = (props) => {
             <h3>Description</h3>
             <p  className={styles.foodPairing}>{description}</p>
             <h3>Pairs well with</h3>
-            <p className={styles.foodPairing}>{food_pairing.join(", ")}</p>
+            <ul className={styles.foodList}>
+                {food_pairing.map((meal) => (
+                    <li>{meal}</li>
+                ))}
+            </ul>
             <h3>First brewed in</h3>
             <p>{first_brewed}</p>
             <p><span className={styles.info}>pH:</span> {ph} <span className={styles.info}>IBU:</span> {ibu}</p>  

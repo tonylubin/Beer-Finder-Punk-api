@@ -10,8 +10,8 @@ const Header = ({ setSearchItem }) => {
         <img src={image} alt="Brewdog Logo" />
       </div>
       <div className={styles.header__heading}>
-        <h1>BrewDog</h1>
-        <p>" A Beer Finder for searching for a BrewDog beer that quenches that cold beer thirst..."</p>
+        <h1>Beer Finder</h1>
+        <p>"searching for a BrewDog beer that quenches that cold beer thirst..."</p>
       </div>
       <div className={styles.header__searchbox}>
         <SearchBox setSearchItem={setSearchItem}/>

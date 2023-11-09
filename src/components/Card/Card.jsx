@@ -3,7 +3,7 @@ import CardFront from "../CardFront/CardFront";
 import CardBack from "../CardBack/CardBack";
 import styles from "./Card.module.scss";
 
-const Card = (props) => {
+const Card = ({ beersSearched }) => {
 
   const toggleRotationClass = (e) => e.currentTarget.classList.toggle(styles.cardDisplayRotate);
 
@@ -44,7 +44,7 @@ const Card = (props) => {
     );
   };
 
-  return <>{props.beersSearched.map(getBeerCard)}</>;
+  return <>{beersSearched.map(getBeerCard)}</>;
 };
 
 export default Card;

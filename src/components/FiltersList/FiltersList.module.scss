@@ -1,29 +1,23 @@
 @use "../../variables" as *;
 
-.filterItem {
+.dropdown {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: ($base-rem-length * 8);
   font-size: ($base-rem-length * 8);
   color: $neonGreen;
   font-weight: ($font-weight-base * 6);
   font-family: $lato-font;
-  gap: ($base-rem-length * 3);
-}
-
-.checkbox {
-  accent-color: $neonGreen;
-  color: $main-background-color;
 }
 
 @media screen and (min-width: 768px) {
-  .filterItem {
+  .dropdown {
     font-size: ($base-rem-length * 11);
   }
 }
 
 @media screen and (min-width: 992px) {
-  .filterItem {
+  .dropdown {
     width: 50%;
     font-size: ($base-rem-length * 11);
     padding-left: ($base-px-length * 4);

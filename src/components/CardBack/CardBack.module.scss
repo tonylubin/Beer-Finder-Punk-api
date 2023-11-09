@@ -5,7 +5,7 @@
     width: 100%;
     text-align: center;
     overflow: auto;
-    background-color: $card-color;
+    background-color: $search-box-color;
     border-radius: ($base-px-length * 3);
     font-family: $lato-font;
     font-weight: ($font-weight-base * 3);
@@ -16,7 +16,7 @@
     
     > h3 {
         @include textUnderline;
-        color: $secondary-color;
+        color: $neonGreen;
         @include padding(15,0,10,0);
     }
 }
@@ -26,11 +26,21 @@
     @include padding(0,15,0,15);
 }
 
+.foodList {
+    text-align: left;
+    @include padding(0,20,0,20);
+    margin-left: $base-rem-length * 15;
+
+    > li {
+        margin-bottom: $base-rem-length * 3;
+    }
+}
+
 .info {
     font-size: ($base-rem-length * 11);
     font-weight: bold;
     @include padding(0,2,0,5);
-    color: $secondary-color;
+    color: $neonGreen;
     @include textUnderline;
 }
 

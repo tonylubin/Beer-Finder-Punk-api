@@ -13,6 +13,7 @@ function App() {
   const [abvFilter, setAbvFilter] = useState(false);
   const [classicFilter, setClassicFilter] = useState(false);
   const [acidityFilter, setAcidityFilter] = useState(false);
+  const [foodFilter, setFoodFilter] = useState(false);
 
   useEffect(() => {
     // N/B: getBeerData function returns a promise that we need to handle
@@ -21,12 +22,13 @@ function App() {
         searchItem,
         abvFilter,
         classicFilter,
+        foodFilter,
         acidityFilter
       );
       setBeersFiltered(beers);
     };
     fetchBeers();
-  }, [abvFilter, acidityFilter, classicFilter, searchItem]);
+  }, [abvFilter, acidityFilter, foodFilter, classicFilter, searchItem]);
 
   return (
     <div className={styles.appContainer}>
@@ -35,12 +37,14 @@ function App() {
         setAbvFilter={setAbvFilter}
         setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
+        setFoodFilter={setFoodFilter}
       />
       <Options
         setSearchItem={setSearchItem}
         setAbvFilter={setAbvFilter}
         setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
+        setFoodFilter={setFoodFilter}
       />
       {beersFiltered && <Main beersSearched={beersFiltered} />}
     </div>

@@ -5,6 +5,7 @@ import styles from "./NavBar.module.scss";
 const NavBar = ({
   setAbvFilter,
   setClassicFilter,
+  setFoodFilter,
   setAcidityFilter
 }) => {
   
@@ -15,6 +16,7 @@ const NavBar = ({
         setAbvFilter={setAbvFilter}
         setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
+        setFoodFilter={setFoodFilter}
       />
       <p className={styles.info}>Click on Beer card for more information</p>
     </nav>

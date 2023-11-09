@@ -8,6 +8,7 @@ const Options = ({
   setAbvFilter,
   setAcidityFilter,
   setClassicFilter,
+  setFoodFilter
 }) => {
   const [visibility, setVisibility] = useState(false);
 
@@ -28,6 +29,7 @@ const Options = ({
           setAbvFilter={setAbvFilter}
           setAcidityFilter={setAcidityFilter}
           setClassicFilter={setClassicFilter}
+          setFoodFilter={setFoodFilter}
           />
         </div>
       </div>

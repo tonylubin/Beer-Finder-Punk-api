@@ -17,6 +17,7 @@ $primary-color: #000;
 $border1-color: #e0dedc85;
 $border2-color: #acacac;
 $menu-color: #e3e3e3;
+$neonGreen: #34D19F;
 
 // Spacing
 $base-px-length: 5px;
@@ -27,8 +28,9 @@ $card-width: 300px;
 // mixins
 @mixin textUnderline {
     text-decoration-line: underline;
-    text-decoration-color: $secondary-color;
+    text-decoration-color: $neonGreen;
     text-decoration-thickness: ($base-px-length - 3);
+    text-underline-offset: 2px;
 }
 
 @mixin padding($top,$right,$bottom,$left) {

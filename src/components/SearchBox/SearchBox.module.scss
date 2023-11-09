@@ -5,7 +5,7 @@
     font-size: ($base-rem-length * 10);
     background-color: $search-box-color;
     border-radius: ($base-px-length * 3);
-    border: none;
+    border: 1.5px solid $border1-color;
     @include padding(5, 10, 5, 30);
 }
 

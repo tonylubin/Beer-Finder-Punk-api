@@ -16,7 +16,7 @@ const CardFront = (props) => {
                 <img src={image} alt={name} />
             </div>
             <div className={styles.infoContainer}>
-                <h2>{name}</h2>
+                <h2>{name.toUpperCase()}</h2>
                 <p className={styles.infoContainer__abv}>ABV: {abv}%</p>
                 <h4>"{tagline}"</h4>
             </div>
