@@ -12,23 +12,33 @@
   justify-content: center;
 
   .imageContainer {
-    height: 40%;
+    height: 50%;
     width: auto;
     @include padding(6,4,4,4);
-    
-    img {
-      width: auto;
+    background-color: $aqua;
+    border-radius: ($base-px-length * 3) ($base-px-length * 3) 0 0;
+
+    &__holder {
+      width: 100%;
       height: 100%;
+      @include flexCenter();
+      padding: 1.5rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+
     }
+    
   }
 
   .infoContainer {
-    display: flex;
+    @include flexCenter();
     flex-direction: column;
-    height: auto;
+    flex-grow: 1;
     width: 100%;
-    gap: ($base-rem-length * 10);
-    padding-top: ($base-rem-length * 10);
+    gap: ($base-rem-length * 15);
 
     h2 {
       margin-bottom: 0;
@@ -44,9 +54,7 @@
       border-radius: ($base-px-length * 4);
       background-color: $main-background-color;
       width: 40%;
-      margin: ($base-rem-length * 10) auto;
       padding: $base-px-length;
-      //font-weight: ($font-weight-base * 6);
       color: $neonGreen;
     }
   }

@@ -13,7 +13,9 @@ const CardFront = (props) => {
     return (
         <div className={styles.cardFront}>
             <div className={styles.imageContainer}>
-                <img src={image} alt={name} />
+                <div className={styles.imageContainer__holder}>
+                    <img src={image} alt={name} />
+                </div>
             </div>
             <div className={styles.infoContainer}>
                 <h2>{name.toUpperCase()}</h2>

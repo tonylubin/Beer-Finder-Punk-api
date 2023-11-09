@@ -8,6 +8,10 @@
   color: $neonGreen;
   font-weight: ($font-weight-base * 6);
   font-family: $lato-font;
+
+  > select {
+    font-weight: ($font-weight-base * 4);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -18,7 +22,7 @@
 
 @media screen and (min-width: 992px) {
   .dropdown {
-    width: 50%;
+    width: 55%;
     font-size: ($base-rem-length * 11);
     padding-left: ($base-px-length * 4);
   }
