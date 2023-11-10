@@ -11,8 +11,8 @@ const CardBack = (props) => {
             <p  className={styles.foodPairing}>{description}</p>
             <h3>Pairs well with</h3>
             <ul className={styles.foodList}>
-                {food_pairing.map((meal) => (
-                    <li>{meal}</li>
+                {food_pairing.map((meal, i) => (
+                    <li key={i}>{meal}</li>
                 ))}
             </ul>
             <h3>First brewed in</h3>

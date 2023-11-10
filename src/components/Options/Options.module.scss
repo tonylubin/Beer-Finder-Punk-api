@@ -33,7 +33,9 @@
 
     &__filters {
         display: flex;
+        align-items: flex-start;
         gap: ($base-rem-length * 10);
+        padding: 0 2rem; 
     }
 }
 

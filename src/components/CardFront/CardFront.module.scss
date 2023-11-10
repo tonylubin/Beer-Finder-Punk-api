@@ -7,28 +7,26 @@
   background-color: $search-box-color;
   border-radius: ($base-px-length * 3);
   font-family: $antonio-font;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   .imageContainer {
-    height: 40%;
-    width: auto;
-    @include padding(6,4,4,4);
+    height: 50%;
+    width: 100%;
+    @include flexCenter();
+    padding: 2rem;
+    background-color: $aquaColor;
+    border-radius: ($base-px-length * 3) ($base-px-length * 3) 0 0;
     
     img {
-      width: auto;
       height: 100%;
     }
   }
 
   .infoContainer {
-    display: flex;
+    @include flexCenter();
     flex-direction: column;
-    height: auto;
+    height: 50%;
     width: 100%;
-    gap: ($base-rem-length * 10);
-    padding-top: ($base-rem-length * 10);
+    gap: ($base-rem-length * 15);
 
     h2 {
       margin-bottom: 0;
@@ -44,9 +42,7 @@
       border-radius: ($base-px-length * 4);
       background-color: $main-background-color;
       width: 40%;
-      margin: ($base-rem-length * 10) auto;
       padding: $base-px-length;
-      //font-weight: ($font-weight-base * 6);
       color: $neonGreen;
     }
   }

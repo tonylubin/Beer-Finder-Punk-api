@@ -7,7 +7,7 @@
     overflow: auto;
     background-color: $search-box-color;
     border-radius: ($base-px-length * 3);
-    font-family: $lato-font;
+    font-family: $roboto;
     font-weight: ($font-weight-base * 3);
 
     /* Works on Firefox */
@@ -23,7 +23,7 @@
 
 .foodPairing {
     text-align: left;
-    @include padding(0,15,0,15);
+    @include padding(0,20,0,20);
 }
 
 .foodList {

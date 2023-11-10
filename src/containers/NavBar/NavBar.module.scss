@@ -13,13 +13,13 @@
         font-size: ($base-rem-length * 14);
         text-decoration: underline;
         text-underline-offset: ($base-rem-length * 5);
-        padding-left: ($base-px-length * 4);
+        padding-left: 1.2rem;
     }
 }
 
 .info {
     padding-top: ($base-rem-length * 18);
-    padding-left: ($base-px-length * 4);
+    padding-left: 1.2rem;
     font-size: ($base-rem-length * 11);
     @include textUnderline;
 }
