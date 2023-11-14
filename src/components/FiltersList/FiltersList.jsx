@@ -2,13 +2,12 @@ import React from "react";
 import FilterItem from "../FilterItem/FilterItem";
 import styles from "./FiltersList.module.scss";
 
-const FiltersList = ({ setClassicFilter, setAbvFilter, setAcidityFilter, setFoodFilter }) => {
+const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
 
   // object for filter function variable name targeting
   const filterFuncs = {
     classic: setClassicFilter,
-    abv: setAbvFilter,
-    acidity: setAcidityFilter,
+    abv: setAbvFilter
   };
 
   // handle checkbox status (ON/OFF) & apply targeted filter "set" update method from props

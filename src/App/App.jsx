@@ -4,49 +4,83 @@ import Main from "../containers/Main/Main";
 import NavBar from "../containers/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import Header from "../components/Header/Header";
-import getBeerData from "../services/beerdata.service";
+import { getBeerData, addFoodFilter } from "../services/beerdata.service";
 import Options from "../components/Options/Options";
+import { useInView } from "react-intersection-observer";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
 function App() {
-  const [beersFiltered, setBeersFiltered] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const [abvFilter, setAbvFilter] = useState(false);
   const [classicFilter, setClassicFilter] = useState(false);
-  const [acidityFilter, setAcidityFilter] = useState(false);
   const [foodFilter, setFoodFilter] = useState(false);
 
+  const { ref, inView } = useInView();
+
+  // results per page from api
+  const apiResults = 50;
+
+  const {
+    data,
+    isLoading,
+    isError,
+    isSuccess,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery({
+    queryKey: ["beerData",searchItem,abvFilter,classicFilter],
+    queryFn: async ({ pageParam = 1 }) =>
+      getBeerData(searchItem, abvFilter, classicFilter, pageParam),
+    getNextPageParam: (lastPage, allPages) => {
+       return lastPage.length === apiResults ? allPages.length + 1 : undefined;
+    },
+    select: ((currentData) => {
+      if(foodFilter) {
+        const filteredData = addFoodFilter(currentData, foodFilter);
+        // keep original format of data object
+        return {...currentData, pages: filteredData}; 
+      } else {
+        // return unfiltered data
+        return currentData;
+      }
+    })
+  });
+
+  // infinite scroll - fetching next page
   useEffect(() => {
-    // N/B: getBeerData function returns a promise that we need to handle
-    const fetchBeers = async () => {
-      const beers = await getBeerData(
-        searchItem,
-        abvFilter,
-        classicFilter,
-        foodFilter,
-        acidityFilter
-      );
-      setBeersFiltered(beers);
-    };
-    fetchBeers();
-  }, [abvFilter, acidityFilter, foodFilter, classicFilter, searchItem]);
+    if (inView && hasNextPage) {
+      fetchNextPage();
+    }
+  }, [fetchNextPage, inView, hasNextPage]);
 
   return (
     <div className={styles.appContainer}>
       <Header setSearchItem={setSearchItem} />
       <NavBar
         setAbvFilter={setAbvFilter}
-        setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
         setFoodFilter={setFoodFilter}
       />
       <Options
         setSearchItem={setSearchItem}
         setAbvFilter={setAbvFilter}
-        setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
         setFoodFilter={setFoodFilter}
       />
-      {beersFiltered && <Main beersSearched={beersFiltered} />}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : isError ? (
+        <p>Oops, something went wrong!</p>
+      ) : (
+        isSuccess && (
+          <Main
+            beerData={data}
+            isFetchingNextPage={isFetchingNextPage}
+            ref={ref}
+          />
+        )
+      )}
     </div>
   );
 }

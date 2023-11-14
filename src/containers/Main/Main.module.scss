@@ -5,10 +5,16 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: ($base-rem-length * 18);
+    padding-bottom: ($base-rem-length * 25);
     position: absolute;
     top: 30%;
     gap: ($base-rem-length * 25);
     min-width: 100vw;
+
+    > h3 {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .notFound {

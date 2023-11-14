@@ -64,3 +64,44 @@ border-radius: ($base-px-length * 2);
 background: linear-gradient(to left, $main-background-color, #e4e4e4);
 border: ($base-px-length - 4) solid #aaa;
 }
+
+.chart {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    @include padding(5,10,20,10);
+    list-style-type: none;
+    color: $main-background-color;
+
+    &__color1 {
+        background-color: $paleLager;
+    }
+    &__color2 {
+        background-color: $lager;
+    }
+    &__color3 {
+        background-color: $pilsner;
+    }
+    &__color4 {
+        background-color: $wheat;
+    }
+    &__color5 {
+        background-color: $goldenAle;
+    }
+    &__color6 {
+        background-color: $darkAle;
+    }
+    &__color7 {
+        background-color: $porter;
+    }
+    &__color8 {
+        background-color: $stout;
+    }
+    &__color9 {
+        background-color: $imperialStout;
+    }
+
+    &__highlight {
+        transform: scale(1.5);
+        border-radius: 2px;
+    }
+}

@@ -6,7 +6,6 @@ const NavBar = ({
   setAbvFilter,
   setClassicFilter,
   setFoodFilter,
-  setAcidityFilter
 }) => {
   
   return (
@@ -14,7 +13,6 @@ const NavBar = ({
       <h3 className={styles.nav__header}>Filters:</h3>
       <FiltersList
         setAbvFilter={setAbvFilter}
-        setAcidityFilter={setAcidityFilter}
         setClassicFilter={setClassicFilter}
         setFoodFilter={setFoodFilter}
       />
