@@ -78,6 +78,7 @@ function App() {
             strokeWidth="5"
             strokeColor="black"
           />
+          <p>Loading</p>
         </div>
       ) : isError ? (
         <h3 className={styles.loading}>Oops, something went wrong!</h3>
