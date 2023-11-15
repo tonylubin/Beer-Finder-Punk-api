@@ -17,7 +17,7 @@ const NavBar = ({
           setClassicFilter={setClassicFilter}
           setFoodFilter={setFoodFilter}
           />
-        <p className={styles.info}>Click on Beer card for more information</p>
+        <p className={styles.info}>Click on card for more information</p>
       </nav>
     </div>      
   );
