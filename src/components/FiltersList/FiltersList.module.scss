@@ -17,13 +17,13 @@
 @media screen and (min-width: 768px) {
   .dropdown {
     font-size: ($base-rem-length * 11);
+    flex-direction: row;
   }
 }
 
 @media screen and (min-width: 992px) {
   .dropdown {
-    width: 55%;
+    flex-direction: column;
     font-size: ($base-rem-length * 11);
-    padding-left: ($base-px-length * 4);
   }
 }

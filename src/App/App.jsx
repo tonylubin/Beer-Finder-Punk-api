@@ -8,6 +8,7 @@ import { getBeerData, addFoodFilter } from "../services/beerdata.service";
 import Options from "../components/Options/Options";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { RotatingLines } from "react-loader-spinner";
 
 function App() {
   const [searchItem, setSearchItem] = useState("");
@@ -15,10 +16,10 @@ function App() {
   const [classicFilter, setClassicFilter] = useState(false);
   const [foodFilter, setFoodFilter] = useState(false);
 
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 1, initialInView: false });
 
   // results per page from api
-  const apiResults = 50;
+  const apiResLimit = 25;
 
   const {
     data,
@@ -29,22 +30,22 @@ function App() {
     fetchNextPage,
     hasNextPage,
   } = useInfiniteQuery({
-    queryKey: ["beerData",searchItem,abvFilter,classicFilter],
+    queryKey: ["beerData", searchItem, abvFilter, classicFilter],
     queryFn: async ({ pageParam = 1 }) =>
       getBeerData(searchItem, abvFilter, classicFilter, pageParam),
     getNextPageParam: (lastPage, allPages) => {
-       return lastPage.length === apiResults ? allPages.length + 1 : undefined;
+      return lastPage.length === apiResLimit ? allPages.length + 1 : undefined;
     },
-    select: ((currentData) => {
-      if(foodFilter) {
+    select: (currentData) => {
+      if (foodFilter) {
         const filteredData = addFoodFilter(currentData, foodFilter);
         // keep original format of data object
-        return {...currentData, pages: filteredData}; 
+        return { ...currentData, pages: filteredData };
       } else {
         // return unfiltered data
         return currentData;
       }
-    })
+    },
   });
 
   // infinite scroll - fetching next page
@@ -69,9 +70,17 @@ function App() {
         setFoodFilter={setFoodFilter}
       />
       {isLoading ? (
-        <p>Loading...</p>
+        <div className={styles.loading}>
+          <RotatingLines
+            visible={true}
+            width="96"
+            animationDuration="0.75"
+            strokeWidth="5"
+            strokeColor="black"
+          />
+        </div>
       ) : isError ? (
-        <p>Oops, something went wrong!</p>
+        <h3 className={styles.loading}>Oops, something went wrong!</h3>
       ) : (
         isSuccess && (
           <Main
