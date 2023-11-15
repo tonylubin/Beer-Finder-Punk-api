@@ -6,7 +6,6 @@ import styles from "./Options.module.scss";
 const Options = ({
   setSearchItem,
   setAbvFilter,
-  setAcidityFilter,
   setClassicFilter,
   setFoodFilter
 }) => {
@@ -27,7 +26,6 @@ const Options = ({
         <div className={styles.options__filters}>
           <FiltersList
           setAbvFilter={setAbvFilter}
-          setAcidityFilter={setAcidityFilter}
           setClassicFilter={setClassicFilter}
           setFoodFilter={setFoodFilter}
           />

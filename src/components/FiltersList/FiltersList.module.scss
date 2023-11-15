@@ -10,20 +10,20 @@
   font-family: $lato-font;
 
   > select {
-    background-color: $search-box-color;
+    font-weight: ($font-weight-base * 4);
   }
 }
 
 @media screen and (min-width: 768px) {
   .dropdown {
     font-size: ($base-rem-length * 11);
+    flex-direction: row;
   }
 }
 
 @media screen and (min-width: 992px) {
   .dropdown {
-    width: 80%;
+    flex-direction: column;
     font-size: ($base-rem-length * 11);
-    padding-left: 1.2rem;
   }
 }

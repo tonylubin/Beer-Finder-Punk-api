@@ -1,18 +1,18 @@
-const BASE_API_URL = "https://api.punkapi.com/v2/beers?per_page=80";
-
-const getBeerData = async (
-  searchTerm,
-  hasAbvFilter,
-  hasClassicFilter,
-  hasFoodFilter
+export const getBeerData = async (
+  searchItem,
+  abvFilter,
+  classicFilter,
+  pageParam
 ) => {
-  let searchCriteria = searchTerm
-    ? `&beer_name=${searchTerm}`
-    : `&${searchTerm}`;
+  const BASE_API_URL = `https://api.punkapi.com/v2/beers?page=${pageParam}`;
+
+  let searchCriteria = searchItem
+    ? `&beer_name=${searchItem}`
+    : `&${searchItem}`;
 
   let searchTermUrl = [];
-  if (hasAbvFilter) searchTermUrl.push("&abv_lt=4.1");
-  if (hasClassicFilter) searchTermUrl.push("&brewed_before=01-2010");
+  if (abvFilter) searchTermUrl.push("&abv_lt=4.1");
+  if (classicFilter) searchTermUrl.push("&brewed_before=01-2010");
 
   let urlRequest = searchTermUrl.length
     ? `${BASE_API_URL}${searchCriteria}&${searchTermUrl.join("")}`
@@ -20,32 +20,41 @@ const getBeerData = async (
 
   const response = await fetch(urlRequest);
 
-  const data = await response.json();
+  const beerData = await response.json();
 
+  return beerData;
+};
+
+export const addFoodFilter = (beersData, foodItem) => {
   // filter for food pairing
   const foodTermLib = {
     meat: ["chicken", "pork", "beef", "veal", "bacon", "lamb", "ham", "steak"],
     seafood: ["fish", "cod", "tuna", "prawns", "lobster", "crab", "mussels"],
-    spicy: ["spicy", "chillies", "hot", "fiery"],
+    spicy: ["spicy", "chillies", "hot", "fiery", "curry"],
     sweet: ["sweet", "dessert", "pudding", "tart", "custard"],
   };
 
   const filterFoodTerm = (arr) => {
-    const filteredBeersData = data.filter((beer) => {
-      // string array of each meal
-      const foodPairings = beer.food_pairing.map((food) => food.toLowerCase().split(" "));
-      // check if words included in meal
-      const foodSearch = foodPairings.map((meal) => {
-       return arr.some((ingredient) => meal.includes(ingredient))
+    const filteredBeersData = beersData.pages.map((item) => {
+      return item.filter((beer) => {
+        // string array of each meal
+        const foodPairings = beer.food_pairing.map((food) =>
+          food.toLowerCase().split(" ")
+        );
+        // check if words included in meal
+        const foodSearch = foodPairings.map((meal) => {
+          return arr.some((ingredient) => meal.includes(ingredient));
+        });
+        // returns if result is true
+        const check = foodSearch.some((el) => el === true);
+        return check;
       });
-      // returns if result is true
-      const check = foodSearch.some(el => el === true);
-      return check;
     });
     return filteredBeersData;
   };
 
-  switch (hasFoodFilter) {
+  // eslint-disable-next-line default-case
+  switch (foodItem) {
     case "meat":
       return filterFoodTerm(foodTermLib.meat);
     case "seafood":
@@ -54,9 +63,5 @@ const getBeerData = async (
       return filterFoodTerm(foodTermLib.spicy);
     case "sweet":
       return filterFoodTerm(foodTermLib.sweet);
-    default:
-      return data;
   }
 };
-
-export default getBeerData;

@@ -2,6 +2,13 @@
 
 .appContainer {
    position: relative;   
-   min-height: 100vh; 
-   font-family: $roboto;  
+   min-height: 100vh;
+   font-family: $roboto-font;   
+}
+
+.loading {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }

@@ -10,21 +10,30 @@
 
   .imageContainer {
     height: 50%;
-    width: 100%;
-    @include flexCenter();
-    padding: 2rem;
-    background-color: $aquaColor;
+    width: auto;
+    @include padding(6,4,4,4);
+    background-color: $aqua;
     border-radius: ($base-px-length * 3) ($base-px-length * 3) 0 0;
-    
-    img {
+
+    &__holder {
+      width: 100%;
       height: 100%;
+      @include flexCenter();
+      padding: 1.5rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+
     }
+    
   }
 
   .infoContainer {
     @include flexCenter();
     flex-direction: column;
-    height: 50%;
+    flex-grow: 1;
     width: 100%;
     gap: ($base-rem-length * 15);
 

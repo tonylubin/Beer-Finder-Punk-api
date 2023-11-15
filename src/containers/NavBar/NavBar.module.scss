@@ -1,34 +1,37 @@
 @use "../../variables" as *;
 
-.nav {
-    max-width: 20vw;
-    display: none;
-    position: fixed;
-    gap: ($base-px-length * 4);
-    top: 20vh;
-    padding-top: ($base-rem-length * 60);
-    font-family: $lato-font;
 
-    &__header {
+.container {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    position: fixed;
+    top: 18vh;
+
+    .nav {
+      display: flex;
+      flex-direction: column;  
+      width: min-content;
+      gap: ($base-rem-length * 13);
+      font-family: $lato-font;
+      @include padding(80,0,0,15);
+
+      &__header {
         font-size: ($base-rem-length * 14);
         text-decoration: underline;
         text-underline-offset: ($base-rem-length * 5);
-        padding-left: 1.2rem;
+      }
+
+      .info {
+        padding-top: ($base-rem-length * 18);
+        font-size: ($base-rem-length * 11);
+        @include textUnderline;
+      }
     }
-}
-
-.info {
-    padding-top: ($base-rem-length * 18);
-    padding-left: 1.2rem;
-    font-size: ($base-rem-length * 11);
-    @include textUnderline;
-}
-
-
-@media screen and (min-width: 1024px) {
-
-    .nav {
-        display: flex;
-        flex-direction: column;
-    }
+  }
 }
