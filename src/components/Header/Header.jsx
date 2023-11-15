@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import image from "../../BrewDog-logo.jpg";
+import image from "../../assests/BrewDog-logo.jpg";
 import SearchBox from "../SearchBox/SearchBox";
 
 const Header = ({ setSearchItem }) => {
