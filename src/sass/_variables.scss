@@ -19,7 +19,7 @@ $neonGreen: #34D19F;
 $aqua: #00FFBF;
 $scroll-thumbBg: #e4e4e4;
 $scroll-thumbBorder: #aaa;
-$box-shadow: scale-color($primary-color, $alpha: -84%);
+$box-shadow: scale-color($primary-color, $alpha: -80%);
 
 // beer colours
 $paleLager: #EADA24;
@@ -39,7 +39,7 @@ $dark-primaryText: #D0BCFF;
 $dark-secondaryText: #6750A4;
 $dark-scroll-thumb: #36343B;
 $dark-scroll-track: #2B2930;
-$dark-box-shadow: scale-color($dark-secondaryText, $alpha: -70%);
+$dark-box-shadow: scale-color($dark-secondaryText, $alpha: -50%);
 
 // Spacing
 $base-px-length: 5px;
