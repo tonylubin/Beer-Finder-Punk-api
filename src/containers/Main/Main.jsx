@@ -3,7 +3,9 @@ import Card from "../../components/Card/Card";
 import styles from "./Main.module.scss";
 import { ThreeDots } from "react-loader-spinner";
 
+
 const Main = React.forwardRef(({ beerData, isFetchingNextPage }, ref) => {
+
   const searchResults = beerData.pages.flat().length;
 
   return (

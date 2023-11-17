@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use '../../sass/' as *;
 
 
 .container {
@@ -9,7 +9,8 @@
   .container {
     display: flex;
     flex-direction: column;
-    max-width: 20vw;
+    height: 100%;
+    width: 20vw;
     position: fixed;
     top: 18vh;
 

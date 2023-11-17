@@ -1,16 +1,17 @@
-@use "../../variables" as *;
+@use '../../sass/variables' as *;
 
 .dropdown {
   display: flex;
   flex-direction: column;
   gap: ($base-rem-length * 8);
   font-size: ($base-rem-length * 8);
-  color: $neonGreen;
+  color: var(--textSecondaryColor);
   font-weight: ($font-weight-base * 6);
   font-family: $lato-font;
 
   > select {
     font-weight: ($font-weight-base * 4);
+    background-color: var(--secondaryBg);
   }
 }
 

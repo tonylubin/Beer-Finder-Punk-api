@@ -16,6 +16,7 @@ VISIT:  https://tonylubin.github.io/Beer-Finder-Punk-api
 # Design/Display: # 
 
 - mobile first design - viewable across mobile, tablet & laptop
+- light and dark theme - using the html `data-*` attribute to target all html elements with css variables for colour scheme
 - Created a beer finder app that displays the beers on the web page in a card format using CSS Grid
 - applied a hover css styling option to flip card for more information
 - styled using SASS, css modules and utilised BEM convention

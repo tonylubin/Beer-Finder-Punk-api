@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './CardFront.module.scss';
 
+
 const CardFront = (props) => {
     
     const {
@@ -10,6 +11,7 @@ const CardFront = (props) => {
         tagline
     } = props;
 
+ 
     return (
         <div className={styles.cardFront}>
             <div className={styles.imageContainer}>

@@ -1,17 +1,17 @@
-@use "../../variables" as *;
+@use '../../sass/' as *;
 
 .inputBox {    
     width: auto;
     font-size: ($base-rem-length * 10);
-    background-color: $search-box-color;
+    background-color: var(--secondaryBg);
     border-radius: ($base-px-length * 3);
-    border: 1.5px solid $border1-color;
+    border: 1.5px solid var(--borderColor);
     @include padding(5, 10, 5, 30);
 }
 
 .inputBox:focus {
     outline-style: solid;
-    outline-color: $border2-color;
+    outline-color: var(--borderColorAlt);
 }
 
 .wrapper {
@@ -34,10 +34,6 @@
 
 
 @media screen and (min-width: 992px) {
-
-    .wrapper {
-        padding-right: ($base-rem-length * 60);
-    }
 
     .inputBox {
         font-size: ($base-rem-length * 13);

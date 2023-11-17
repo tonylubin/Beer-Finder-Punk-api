@@ -1,19 +1,19 @@
-@use "../../variables" as *;
+@use '../../sass/variables' as *;
 
 .filterItem {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   font-size: ($base-rem-length * 8);
-  color: $neonGreen;
+  color: var(--textSecondaryColor);
   font-weight: ($font-weight-base * 6);
   font-family: $lato-font;
   gap: ($base-rem-length * 3);
 }
 
 .checkbox {
-  accent-color: $neonGreen;
-  color: $main-background-color;
+  accent-color: var(--textSecondaryColor);
+  color: var(--mainBg);
 }
 
 @media screen and (min-width: 768px) {

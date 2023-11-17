@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import FiltersList from "../FiltersList/FiltersList";
 import SearchBox from "../SearchBox/SearchBox";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import styles from "./Options.module.scss";
 
 const Options = ({
   setSearchItem,
   setAbvFilter,
   setClassicFilter,
-  setFoodFilter
+  setFoodFilter,
 }) => {
   const [visibility, setVisibility] = useState(false);
 
@@ -25,11 +26,14 @@ const Options = ({
         <SearchBox setSearchItem={setSearchItem} />
         <div className={styles.options__filters}>
           <FiltersList
-          setAbvFilter={setAbvFilter}
-          setClassicFilter={setClassicFilter}
-          setFoodFilter={setFoodFilter}
+            setAbvFilter={setAbvFilter}
+            setClassicFilter={setClassicFilter}
+            setFoodFilter={setFoodFilter}
           />
         </div>
+      </div>
+      <div className={styles.switch}>
+        <ToggleSwitch />
       </div>
       <div className={styles.btnHolder}>
         <button className={styles.btnHolder__btn} onClick={revealBox}>

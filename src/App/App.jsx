@@ -76,7 +76,7 @@ function App() {
             width="96"
             animationDuration="0.75"
             strokeWidth="5"
-            strokeColor="black"
+            strokeColor="grey"
           />
           <p>Loading</p>
         </div>

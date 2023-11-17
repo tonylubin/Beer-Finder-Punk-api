@@ -1,0 +1,28 @@
+@use '../../sass/variables' as *;
+
+.btn {
+  background-color: transparent;
+  border: none;
+  height: ($base-rem-length * 12);
+  width: ($base-rem-length * 12);
+  cursor: pointer;
+}
+
+.moon {
+  color: $neonGreen;
+}
+
+.sun {
+  color: $dark-primaryText;
+}
+
+@media screen and (min-width: 992px) {
+  .btn {
+    height: ($base-rem-length * 18);
+    width: ($base-rem-length * 18);
+  }
+}
+
+.btn:hover {
+  scale: 1.1
+}

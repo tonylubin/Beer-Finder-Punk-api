@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use '../../sass/variables' as *;
 
 .mainContainer{
     display: grid;
@@ -21,7 +21,7 @@
     text-align: center;
     font-size: ($base-rem-length * 25);
     grid-column: 2;
-    color: $neonGreen;
+    color: var(--textSecondaryColor);
 }
 
 .loading {

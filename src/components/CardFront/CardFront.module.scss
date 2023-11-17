@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use '../../sass/' as *;
 
 .cardFront {
   display: flex;
@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   text-align: center;
-  background-color: $search-box-color;
+  background-color: var(--secondaryBg);
   border-radius: ($base-px-length * 3);
   font-family: $antonio-font;
 
@@ -14,7 +14,7 @@
     height: 50%;
     width: auto;
     @include padding(6,4,4,4);
-    background-color: $aqua;
+    background-color: var(--cardColor);
     border-radius: ($base-px-length * 3) ($base-px-length * 3) 0 0;
 
     &__holder {
@@ -48,12 +48,12 @@
     }
 
     &__abv {
-      border: ($base-px-length - 3) solid $neonGreen;
+      border: ($base-px-length - 3) solid var(--textSecondaryColor);
       border-radius: ($base-px-length * 4);
-      background-color: $main-background-color;
+      background-color: var(--mainBg);
       width: 40%;
       padding: $base-px-length;
-      color: $neonGreen;
+      color: var(--textSecondaryColor);
     }
   }
 }

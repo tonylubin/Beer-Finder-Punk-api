@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use '../../sass/' as *;
 
 .options {
     width: 100%;
@@ -7,9 +7,9 @@
     justify-content: center;
     position: fixed;
     top: 18vh;
-    border-top: 2px solid $search-box-color;
-    border-bottom: 2px solid $border1-color;
-    background-color: $main-background-color;
+    border-top: 2px solid var(--secondaryBg);
+    border-bottom: 2px solid var(--borderColor);
+    background-color: var(--mainBg);
     z-index: 1;
     
     &__box {
@@ -22,7 +22,7 @@
         align-items: center;
         gap: ($base-rem-length * 5);
         z-index: 1;
-        background-color: $menu-color;
+        background-color: var(--menuColor);
         transition: 1s;
         height: 18%;
     }
@@ -49,14 +49,20 @@
         font-size: ($base-rem-length * 8);
         border-radius: ($base-px-length * 4);
         @include padding(5, 15, 5, 15);
-        background-color: $card-color;
-        border: 2px solid $border1-color;
+        background-color: var(--cardColor);
+        border: 2px solid var(--borderColor);
     }
+}
+
+.switch {
+    position: fixed;
+    top: ($base-rem-length * 10);
+    right: ($base-rem-length * 10);
 }
 
 @media screen and (min-width: 1024px) {
     
-    .options {
+    .options, .switch {
         display: none;
     }
 }
