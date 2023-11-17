@@ -6,19 +6,19 @@ VISIT:  https://tonylubin.github.io/Beer-Finder-Punk-api
 
 # Outcomes: #
 
-(1) ability to search for beers via name/letter and page will update while user types each letter  
-(2) can filter content on 3 conditions:   
+1. ability to search for beers via `name or letter` and page will update on input change  
+2. can filter content on 3 conditions:   
     - Low Alcohol (ABV value less than or equal to 4%)  
     - Classic Range (was first brewed before 2010)  
     - Drop down menu for food pairing based on array of keywords
-(3) demonstrate how to read Api's documentation and use it inside the project & manipulate data
+3. demonstrate how to read Api's documentation and use it inside the project & manipulate data
 
 # Design/Display: # 
 
 - mobile first design - viewable across mobile, tablet & laptop
 - light and dark theme - using the html `data-*` attribute to target all html elements with css variables for colour scheme
-- Created a beer finder app that displays the beers on the web page in a card format using CSS Grid
-- applied a hover css styling option to flip card for more information
+- displays the beers in a card format using CSS Grid & flexbox
+- flip card animation for more information
 - styled using SASS, css modules and utilised BEM convention
 - Fixed postion Header that hides main section of beers when scrolling
 - Navigation bar that has a fixed position to enable actions (filtering) to be performed by user whilst scrolling
