@@ -14,6 +14,7 @@ html[data-theme="light"] {
   --scrollTrackBg: #{$search-box-color};
   --primaryFontColor: #{$primary-color};
   --boxShadow: #{$box-shadow};
+  --toggleHover: #{scale-color($neonGreen, $alpha: -70%)};
 }
 
 html[data-theme="dark"] {
@@ -30,4 +31,5 @@ html[data-theme="dark"] {
   --scrollTrackBg: #{$dark-scroll-track};
   --primaryFontColor: #{$main-background-color};
   --boxShadow: #{$dark-box-shadow};
+  --toggleHover: #{scale-color($dark-primaryText, $alpha: -70%)};
 }

@@ -25,6 +25,7 @@ function App() {
     data,
     isLoading,
     isError,
+    error,
     isSuccess,
     isFetchingNextPage,
     fetchNextPage,
@@ -81,7 +82,7 @@ function App() {
           <p>Loading</p>
         </div>
       ) : isError ? (
-        <h3 className={styles.loading}>Oops, something went wrong!</h3>
+        <h3 className={styles.loading}>{`Oops, something went wrong!: ${error.message}`}</h3>
       ) : (
         isSuccess && (
           <Main

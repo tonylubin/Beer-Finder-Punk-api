@@ -28,7 +28,7 @@ const Main = React.forwardRef(({ beerData, isFetchingNextPage }, ref) => {
             height="80"
             width="80"
             radius="9"
-            color="#000"
+            color="#686868"
             ariaLabel="three-dots-loading"
             visible={true}
             wrapperClass={styles.loading}
