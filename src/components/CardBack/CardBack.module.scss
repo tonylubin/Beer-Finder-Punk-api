@@ -71,6 +71,7 @@ border: ($base-px-length - 4) solid var(--scrollThumbBorder);
     @include padding(5,10,20,10);
     list-style-type: none;
     color: var(--mainBG);
+    gap: 0.5px;
 
     &__color1 {
         background-color: $paleLager;

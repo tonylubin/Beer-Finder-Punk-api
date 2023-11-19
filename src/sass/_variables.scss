@@ -14,12 +14,14 @@ $secondary-color: #1BA7CD;
 $primary-color: #000;
 $border1-color: #e0dedc85;
 $border2-color: #acacac;
+$card-border: #c3c6ce;
 $menu-color: #e3e3e3;
 $neonGreen: #34D19F;
 $aqua: #00FFBF;
 $scroll-thumbBg: #e4e4e4;
 $scroll-thumbBorder: #aaa;
 $box-shadow: scale-color($primary-color, $alpha: -80%);
+$card-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
 // beer colours
 $paleLager: #EADA24;

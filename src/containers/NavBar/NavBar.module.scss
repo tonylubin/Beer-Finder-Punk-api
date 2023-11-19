@@ -1,8 +1,12 @@
 @use '../../sass/' as *;
 
-
 .container {
     display: none;
+
+    .nav{
+      font-weight: 700;
+    }
+    
 }
 
 @media screen and (min-width: 1024px) {
@@ -26,6 +30,7 @@
         font-size: ($base-rem-length * 14);
         text-decoration: underline;
         text-underline-offset: ($base-rem-length * 5);
+        text-decoration-thickness: 3px;
       }
 
       .info {

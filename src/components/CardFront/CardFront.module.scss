@@ -13,9 +13,9 @@
   .imageContainer {
     height: 50%;
     width: auto;
-    @include padding(6,4,4,4);
     background-color: var(--cardColor);
-    border-radius: ($base-px-length * 3) ($base-px-length * 3) 0 0;
+    // 13px - to account for border of 2px
+    border-radius: 13px 13px 0 0;
 
     &__holder {
       width: 100%;

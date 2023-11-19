@@ -1,6 +1,9 @@
 import React from "react";
 import FilterItem from "../FilterItem/FilterItem";
 import styles from "./FiltersList.module.scss";
+import BeerIcon from "../Icons/BeerIcon";
+import ClassicIcon from "../Icons/ClassicIcon";
+import MealIcon from "../Icons/MealIcon";
 
 const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
 
@@ -28,6 +31,7 @@ const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
       checkboxFunc: getCheckboxId,
       type: "checkbox",
       id: "abv",
+      icon: <BeerIcon classname={`${styles.filterHolder__icon} ${styles.beer}`} />
     },
     {
       name: "classic",
@@ -35,6 +39,7 @@ const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
       checkboxFunc: getCheckboxId,
       type: "checkbox",
       id: "classic",
+      icon: <ClassicIcon classname={styles.filterHolder__icon} />
     }
   ];
 
@@ -50,14 +55,16 @@ const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
 
   const getFilters = filterData.map((filterInfo, index) => {
     return (
-      <FilterItem
-        key={index}
-        name={filterInfo.name}
-        description={filterInfo.description}
-        checkboxFunc={filterInfo.checkboxFunc}
-        type={filterInfo.type}
-        id={filterInfo.id}
-      />
+      <div className={styles.filterHolder} key={index}>
+        {filterInfo.icon}
+        <FilterItem
+          name={filterInfo.name}
+          description={filterInfo.description}
+          checkboxFunc={filterInfo.checkboxFunc}
+          type={filterInfo.type}
+          id={filterInfo.id}
+        />
+      </div>
     );
   });
 
@@ -65,7 +72,10 @@ const FiltersList = ({ setClassicFilter, setAbvFilter, setFoodFilter }) => {
     <>
       {getFilters}
       <div className={styles.dropdown}>
-        <label htmlFor="foods">Drinks well with:</label>
+        <div className={styles.filterHolder}>
+          <MealIcon classname={styles.filterHolder__icon}/>
+          <label htmlFor="foods">Drinks well with:</label>
+        </div>
         <select name="foods" id="foods" onChange={handleDropdownStatus}>
           <option value={""}>Select food pairing--</option>
           <option value={"meat"}>Meat</option>

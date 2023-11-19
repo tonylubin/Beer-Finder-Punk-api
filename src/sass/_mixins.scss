@@ -3,8 +3,8 @@
 @mixin textUnderline {
   text-decoration-line: underline;
   text-decoration-color: var(--textSecondaryColor);
-  text-decoration-thickness: ($base-px-length - 3);
-  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 @mixin padding($top,$right,$bottom,$left) {
