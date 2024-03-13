@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Beer-Finder-Punk-api/static/css/main.f1f7281e.css",
+    "main.css": "/Beer-Finder-Punk-api/static/css/main.42503c81.css",
     "main.js": "/Beer-Finder-Punk-api/static/js/main.11e7a65e.js",
     "index.html": "/Beer-Finder-Punk-api/index.html",
-    "main.f1f7281e.css.map": "/Beer-Finder-Punk-api/static/css/main.f1f7281e.css.map",
+    "main.42503c81.css.map": "/Beer-Finder-Punk-api/static/css/main.42503c81.css.map",
     "main.11e7a65e.js.map": "/Beer-Finder-Punk-api/static/js/main.11e7a65e.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1f7281e.css",
+    "static/css/main.42503c81.css",
     "static/js/main.11e7a65e.js"
   ]
 }
